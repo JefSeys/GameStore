@@ -25,14 +25,8 @@ One to two paragraph statement about your product and what it does.
 
 - iOS 8.0+
 - Xcode 7.3
-```
-github "yourUsername/yourlibrary"
-```
-#### Manually
-1. Download and drop ```YourLibrary.swift``` in your project.  
-2. Congratulations!  
 
-## Usage example
+## Accounts
 
 ```swift
 import EZSwiftExtensions
@@ -41,17 +35,12 @@ ez.detectScreenShot { () -> () in
 }
 ```
 
-## Contribute
-
-We would love you for the contribution to **YourLibraryName**, check the ``LICENSE`` file for more info.
 
 ## Meta
 
-Your Name – [@YourGitHub](https://twitter.com/dbader_org) – YourEmail@example.com
+Jef Seys – [@YourGitHub](https://twitter.com/dbader_org) – jef.seys@gmail.com
 
-Distributed under the XYZ license. See ``LICENSE`` for more information.
-
-[https://github.com/yourname/github-link](https://github.com/dbader/)
+[https://github.com/yourname/github-link](https://github.com/JefSeys/GameStore)
 
 [swift-image]:https://img.shields.io/badge/swift-3.0-orange.svg
 [swift-url]: https://swift.org/
