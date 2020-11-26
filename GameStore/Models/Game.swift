@@ -7,13 +7,17 @@
 
 struct Game {
   let name: String
-  let fullName: String
-  let description: String?
+    let price: Double
+  let description: String
+    let rating: Int
+    let base64Img: String
 
   enum CodingKeys: String, CodingKey {
     case name
+    case price
     case description
-    case fullName = "full_name"
+    case rating
+    case base64Img
   }
 }
 
@@ -22,7 +26,9 @@ extension Game: Decodable {
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     name = try container.decode(String.self, forKey: .name)
-    fullName = try container.decode(String.self, forKey: .fullName)
-    description = try? container.decode(String.self, forKey: .description)
+    price = try container.decode(Double.self, forKey: .price)
+    description = try container.decode(String.self, forKey: .description)
+    rating = try container.decode(Int.self, forKey: .rating)
+    base64Img = try container.decode(String.self, forKey: .base64Img)
   }
 }
