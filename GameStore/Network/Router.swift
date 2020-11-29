@@ -30,7 +30,7 @@ enum Router {
   case login(String, String)
 
   var baseURL: String {
-      return "http://192.168.0.198:45455/api/"
+      return "http://192.168.1.31:45455/api/"
   }
 
   var path: String {
@@ -53,8 +53,8 @@ enum Router {
 
   var parameters: [String: String]? {
     switch self {
-    case .login:
-        return ["email": "100", "password": ""]
+    case .login(let email, let password):
+        return ["email": email, "password": password]
     case .getGames:
         return nil
     }

@@ -14,6 +14,7 @@ import SwiftKeychainWrapper
 class APIManager {
     var webAuthenticationSession: ASWebAuthenticationSession?
     static let shared = APIManager()
+    static var token = ""
 
     static let sessionManager: Session = {
       let configuration = URLSessionConfiguration.af.default
@@ -50,13 +51,14 @@ class APIManager {
   }
     
     
-        static func loginUser(email: String, password: String) {
+        static func loginUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
             sessionManager.request(Router.login(email, password)).responseString { response in
-                
-                if 422 == response.response?.statusCode {
-                    
+                let error = response.response?.statusCode
+                if error == nil {
+                    token = String(data: response.data!, encoding: .utf8)!
+                    completion(true)
                 } else {
-                    KeychainWrapper.standard.set(response.value!, forKey: "token")
+                    completion(false)
                 }
             }
         }
