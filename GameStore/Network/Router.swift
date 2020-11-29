@@ -28,6 +28,7 @@ extension Router: URLRequestConvertible {
 enum Router {
   case getGames
   case login(String, String)
+    case registreer(String, String, String, String, String)
 
   var baseURL: String {
       return "http://192.168.1.31:45455/api/"
@@ -39,12 +40,14 @@ enum Router {
       return "Account"
     case .getGames:
       return "Games"
+    case.registreer:
+    return "Account/register"
     }
   }
 
   var method: HTTPMethod {
     switch self {
-    case .login:
+    case .login, .registreer:
       return .post
     case .getGames:
       return .get
@@ -57,6 +60,8 @@ enum Router {
         return ["email": email, "password": password]
     case .getGames:
         return nil
+    case .registreer(let email, let wachtwoord, let voornaam, let achternaam, let herhaalwachtwoord):
+        return ["email": email, "password": wachtwoord, "firstName": voornaam, "lastName": achternaam, "passwordConfirmation": herhaalwachtwoord]
     }
   }
 }

@@ -20,8 +20,25 @@ class LoginViewController: UIViewController {
         get { return _isIngelogd }
     }
     
+    override func viewDidLoad() {
+      super.viewDidLoad()
+        
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+
+           //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+           //tap.cancelsTouchesInView = false
+
+           view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
     @IBAction func login(_ sender: Any) {
-        //errorMessage.isHidden = true
+        errorMessage.isHidden = true
         loadIcon.startAnimating()
         APIManager.loginUser(email: email.text!, password: wachtwoord.text!){ [self] ingelogd in
             if(ingelogd == true){
@@ -38,11 +55,10 @@ class LoginViewController: UIViewController {
     private func navigateMain(){
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             
-        guard let mainNavigationVC = storyboard.instantiateViewController(withIdentifier: "NavigationController") as? NavigationViewController else{
+        guard let mainNavigationVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController else{
             return
         }
         
-        
-        present(mainNavigationVC, animated: false, completion: nil)
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changRootViewController(mainNavigationVC)
     }
 }

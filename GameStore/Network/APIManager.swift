@@ -15,6 +15,8 @@ class APIManager {
     var webAuthenticationSession: ASWebAuthenticationSession?
     static let shared = APIManager()
     static var token = ""
+    static var gebruikerEmail = ""
+    static var isIngelogd = false
 
     static let sessionManager: Session = {
       let configuration = URLSessionConfiguration.af.default
@@ -50,29 +52,34 @@ class APIManager {
       }
   }
     
+    static func loguit(){
+        token = ""
+        isIngelogd = false
+        gebruikerEmail = ""
+    }
     
         static func loginUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
             sessionManager.request(Router.login(email, password)).responseString { response in
                 let error = response.response?.statusCode
-                if error == nil {
+                if error == 201 {
                     token = String(data: response.data!, encoding: .utf8)!
+                    isIngelogd = true
+                    gebruikerEmail = email
                     completion(true)
                 } else {
+                    isIngelogd = false
                     completion(false)
                 }
             }
         }
-    /*
-  func searchRepositories(query: String, completion: @escaping ([Repository]) -> Void) {
-    let url = "https://api.github.com/search/repositories"
-    var queryParameters: [String: Any] = ["sort": "stars", "order": "desc", "page": 1]
-    queryParameters["q"] = query
-    AF.request(url, parameters: queryParameters)
-      .responseDecodable(of: Repositories.self) { response in
-        guard let items = response.value else {
-          return completion([])
+    static func registreer(email: String, password: String, voornaam: String, achternaam: String, herhaalwachtwoord: String, completion: @escaping (Bool) -> Void) {
+        sessionManager.request(Router.registreer(email, password, voornaam, achternaam, herhaalwachtwoord)).responseString { response in
+            let error = response.response?.statusCode
+            if error == 201 {
+                completion(true)
+            } else {
+                completion(false)
+            }
         }
-        completion(items.items)
-      }
-  }*/
+    }
 }
