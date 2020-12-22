@@ -25,6 +25,19 @@ class GameDetailViewController: UIViewController{
         let data = Data(base64Encoded: selectedGame.base64Img.replacingOccurrences(of: "data:image/jpeg;base64,", with: ""), options: .ignoreUnknownCharacters)
         imgView.image = UIImage(data: data!)
     }
+    
     @IBAction func voegToeAanWinkelwagen(_ sender: Any) {
+        let alert = UIAlertController(title: selectedGame.name + " toevoegen?", message: "test", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ja", style: UIAlertAction.Style.default, handler: {(action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        
+        alert.addAction(UIAlertAction(title: "Nee", style: UIAlertAction.Style.cancel, handler: {(action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }

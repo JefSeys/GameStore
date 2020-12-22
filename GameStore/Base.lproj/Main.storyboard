@@ -42,6 +42,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" systemColor="secondaryLabelColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="AAV-VF-o3E" customClass="GameTableView" customModule="GameStore" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -69,6 +70,8 @@
                                         <constraint firstItem="dh0-6t-2LT" firstAttribute="centerX" secondItem="Uhm-3A-82S" secondAttribute="centerX" constant="150" id="EFH-Ze-vNd"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
                                 <connections>
                                     <outlet property="naam" destination="uba-Kn-5yk" id="5K5-2i-yzP"/>
                                     <outlet property="prijs" destination="dh0-6t-2LT" id="OLV-zf-RXu"/>
@@ -126,7 +129,8 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NLS-G3-ROa"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
                         <constraints>
                             <constraint firstItem="K19-cA-3Oa" firstAttribute="centerY" secondItem="oyo-bC-6UC" secondAttribute="centerY" constant="100" id="D8H-0D-bzz"/>
                             <constraint firstItem="SOi-pI-nTT" firstAttribute="centerX" secondItem="oyo-bC-6UC" secondAttribute="centerX" id="DJt-tQ-FmI"/>
@@ -221,7 +225,8 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4ZY-QR-qL5"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
                         <constraints>
                             <constraint firstItem="3W3-zZ-77N" firstAttribute="centerX" secondItem="v8d-Pb-yiC" secondAttribute="centerX" id="2Nd-XH-rR6"/>
                             <constraint firstItem="3W3-zZ-77N" firstAttribute="top" secondItem="oY9-Os-XUT" secondAttribute="bottom" constant="30" id="90q-Q6-ell"/>
@@ -386,7 +391,8 @@
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nXi-U6-5O2"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
                         <constraints>
                             <constraint firstItem="WGG-cq-gmQ" firstAttribute="centerY" secondItem="0A0-qd-Xck" secondAttribute="centerY" id="4Ut-t8-q4G"/>
                             <constraint firstItem="w6A-5R-96E" firstAttribute="centerX" secondItem="0A0-qd-Xck" secondAttribute="centerX" id="7fs-vg-VXe"/>
@@ -444,7 +450,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="abD-gP-U3e"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Winkelwagen" image="cart" catalog="system" selectedImage="cart" id="GQj-ca-xDh"/>
                 </viewController>
@@ -481,7 +488,8 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7tc-Hh-din"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
                         <constraints>
                             <constraint firstItem="UPe-4j-Ycq" firstAttribute="centerX" secondItem="Rmh-rb-NJh" secondAttribute="centerX" id="Cyz-Ka-I13"/>
                             <constraint firstItem="Qnk-Im-Gvs" firstAttribute="centerX" secondItem="Rmh-rb-NJh" secondAttribute="centerX" id="DNr-O5-aS5"/>
@@ -526,6 +534,9 @@
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
                 navigateMain()
             }else{
                 loadIcon.stopAnimating()
-                errorMessage.text = "Er is iets fout gelopen tijdens het inloggen"
+                errorMessage.text = "Email of wachtwoord verkeerd"
                 errorMessage.isHidden = false
             }
           }
