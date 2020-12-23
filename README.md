@@ -13,32 +13,22 @@ One to two paragraph statement about your product and what it does.
 
 ## Features
 
-- [x] Feature 1
-- [x] Feature 2
-- [x] Feature 3
-- [x] Feature 4
-- [x] Feature 5
-
-## Requirements
-
-- iOS 8.0+
-- Xcode 7.3
+- [x] Inloggen
+- [x] Registreren
+- [x] Gamelijst + details
+- [x] Winkelwagen
 
 ## Accounts
 
-```swift
-import EZSwiftExtensions
-ez.detectScreenShot { () -> () in
-    print("User took a screen shot")
-}
-```
+- Email: jef.seys@gmail.be
+- Password: P@ssword1111
 
 
 ## Meta
 
-Jef Seys – [@YourGitHub](https://twitter.com/dbader_org) – jef.seys@gmail.com
+Jef Seys – [@JefSeys](https://github.com/JefSeys) – jef.seys@gmail.com
 
-[https://github.com/yourname/github-link](https://github.com/JefSeys/GameStore)
+[https://github.com/GameStore](https://github.com/JefSeys/GameStore)
 
 [swift-image]:https://img.shields.io/badge/swift-3.0-orange.svg
 [swift-url]: https://swift.org/
