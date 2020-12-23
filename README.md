@@ -1,8 +1,6 @@
 # GameStore
 > Gemaakt door Jef Seys
 
-![](header.png)
-
 ## Features
 
 - [x] Inloggen
