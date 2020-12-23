@@ -196,14 +196,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wachtwoord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oY9-Os-XUT">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="P@ssword1111" borderStyle="roundedRect" placeholder="Wachtwoord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oY9-Os-XUT">
                                 <rect key="frame" x="100" y="463.5" width="214" height="34"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Zt-Z1-z7f">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jef.seys@gmail.be" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Zt-Z1-z7f">
                                 <rect key="frame" x="100" y="383.5" width="214" height="34"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -442,23 +442,6 @@
             </objects>
             <point key="canvasLocation" x="-636" y="86"/>
         </scene>
-        <!--Winkelwagen-->
-        <scene sceneID="sKu-Bd-D27">
-            <objects>
-                <viewController id="DSP-FI-FzK" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YOT-rW-Enw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="abD-gP-U3e"/>
-                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
-                        <color key="tintColor" systemColor="systemRedColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Winkelwagen" image="cart" catalog="system" selectedImage="cart" id="GQj-ca-xDh"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wkF-z2-lZE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1644.9275362318842" y="-587.27678571428567"/>
-        </scene>
         <!--Account-->
         <scene sceneID="Qax-Kh-g69">
             <objects>
@@ -520,13 +503,135 @@
                     </tabBar>
                     <connections>
                         <segue destination="dGA-9V-LOV" kind="relationship" relationship="viewControllers" id="vRm-9H-WOH"/>
-                        <segue destination="DSP-FI-FzK" kind="relationship" relationship="viewControllers" id="tQK-kS-rHs"/>
                         <segue destination="TOn-SD-L3s" kind="relationship" relationship="viewControllers" id="qu3-0h-LiR"/>
+                        <segue destination="y4a-pq-k4O" kind="relationship" relationship="viewControllers" id="scw-ts-4cc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vy3-xA-p0I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="422" y="-587"/>
+        </scene>
+        <!--Jouw items-->
+        <scene sceneID="w8o-KR-bbr">
+            <objects>
+                <tableViewController id="Ckc-3S-TlS" customClass="WinkelwagenViewController" customModule="GameStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ro4-Zb-TiI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="separatorColor" systemColor="secondaryLabelColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="4pD-51-eVF" customClass="WinkelwagenTableView" customModule="GameStore" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4pD-51-eVF" id="z91-71-ztT">
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAk-1f-Ea0">
+                                            <rect key="frame" x="30" y="11.5" width="44.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prijs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqF-fz-73q">
+                                            <rect key="frame" x="322.5" y="11.5" width="32.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nAk-1f-Ea0" firstAttribute="leading" secondItem="z91-71-ztT" secondAttribute="leadingMargin" constant="10" id="h1O-Me-59X"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="UqF-fz-73q" secondAttribute="trailing" constant="20" id="nb7-Wc-RR4"/>
+                                        <constraint firstItem="nAk-1f-Ea0" firstAttribute="centerY" secondItem="z91-71-ztT" secondAttribute="centerY" id="v8H-Yr-zEr"/>
+                                        <constraint firstItem="UqF-fz-73q" firstAttribute="centerY" secondItem="z91-71-ztT" secondAttribute="centerY" id="y9s-iu-ycq"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="naam" destination="nAk-1f-Ea0" id="kYb-se-bqF"/>
+                                    <outlet property="prijs" destination="UqF-fz-73q" id="gUc-xV-PL6"/>
+                                    <segue destination="uok-49-Vqe" kind="show" id="nQL-wc-MmE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ckc-3S-TlS" id="faO-jh-6i5"/>
+                            <outlet property="delegate" destination="Ckc-3S-TlS" id="qJU-iv-7mf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Jouw items" id="arg-nz-MkT"/>
+                    <connections>
+                        <outlet property="gameTable" destination="Ro4-Zb-TiI" id="Igy-yY-3ZW"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wgp-fg-8DY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2667" y="-587"/>
+        </scene>
+        <!--Winkelwagen Detail View Controller-->
+        <scene sceneID="Xek-UA-C7O">
+            <objects>
+                <viewController id="uok-49-Vqe" customClass="WinkelwagenDetailViewController" customModule="GameStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VuZ-Ln-Z1B">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djl-iH-Qew">
+                                <rect key="frame" x="184.5" y="437.5" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFO-0X-LhB">
+                                <rect key="frame" x="118" y="558.5" width="178" height="30"/>
+                                <state key="normal" title="Verwijder uit winkelwagen">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="verwijderGame:" destination="uok-49-Vqe" eventType="touchUpInside" id="8b5-uw-uwz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LdN-Dr-1VI"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstItem="IFO-0X-LhB" firstAttribute="centerX" secondItem="VuZ-Ln-Z1B" secondAttribute="centerX" id="EpC-ze-Aes"/>
+                            <constraint firstItem="IFO-0X-LhB" firstAttribute="top" secondItem="djl-iH-Qew" secondAttribute="bottom" constant="100" id="dcz-re-bJT"/>
+                            <constraint firstItem="djl-iH-Qew" firstAttribute="centerX" secondItem="VuZ-Ln-Z1B" secondAttribute="centerX" id="tbt-eQ-4gr"/>
+                            <constraint firstItem="djl-iH-Qew" firstAttribute="centerY" secondItem="VuZ-Ln-Z1B" secondAttribute="centerY" id="wNd-14-bX3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LRg-k9-eIl"/>
+                    <connections>
+                        <outlet property="name" destination="djl-iH-Qew" id="QRU-gU-g2R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VtS-dy-Wz7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3649" y="-587"/>
+        </scene>
+        <!--Winkelwagen-->
+        <scene sceneID="QyP-yR-M3C">
+            <objects>
+                <navigationController id="y4a-pq-k4O" customClass="NavigationViewController" customModule="GameStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Winkelwagen" image="cart" catalog="system" selectedImage="cart" id="aQF-92-lDr"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sQo-VO-9bw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ckc-3S-TlS" kind="relationship" relationship="rootViewController" id="2Dg-P0-wbT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oja-xY-tfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1645" y="-587"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.21632103858061166" green="0.84159682007518033" blue="0.37983354419330334" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

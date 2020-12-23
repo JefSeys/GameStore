@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		28AB9E309FD175B32EC6CC17 /* Pods_GameStore_GameStoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F85C2C4F15F02D8066C629B /* Pods_GameStore_GameStoreUITests.framework */; };
+		6035F9B9259398B4000549BC /* WinkelwagenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6035F9B8259398B4000549BC /* WinkelwagenViewController.swift */; };
+		6035F9BF25939AC9000549BC /* WinkelwagenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6035F9BE25939AC9000549BC /* WinkelwagenService.swift */; };
+		6035F9C42593A0E5000549BC /* WinkelwagenDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6035F9C32593A0E5000549BC /* WinkelwagenDetailViewController.swift */; };
 		60450E742574033C00FEF5E9 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450E732574033C00FEF5E9 /* AccountViewController.swift */; };
 		6080D135256FF851003BAFBE /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6080D134256FF851003BAFBE /* GameDetailViewController.swift */; };
 		6080D13A256FFB24003BAFBE /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6080D139256FFB24003BAFBE /* GameDetailView.swift */; };
+		60955BCA2593A7FF007C4B15 /* WinkelwagenTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60955BC92593A7FF007C4B15 /* WinkelwagenTableView.swift */; };
 		60A6E249256AEA87003303D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6E248256AEA87003303D2 /* AppDelegate.swift */; };
 		60A6E24B256AEA87003303D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6E24A256AEA87003303D2 /* SceneDelegate.swift */; };
 		60A6E24D256AEA87003303D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6E24C256AEA87003303D2 /* ViewController.swift */; };
@@ -54,9 +58,13 @@
 		02A5CF28672BD6EF8A0FE307 /* Pods-GameStore-GameStoreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameStore-GameStoreUITests.release.xcconfig"; path = "Target Support Files/Pods-GameStore-GameStoreUITests/Pods-GameStore-GameStoreUITests.release.xcconfig"; sourceTree = "<group>"; };
 		06FBCE2D55BF64C6FCA1FA77 /* Pods-GameStoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameStoreTests.release.xcconfig"; path = "Target Support Files/Pods-GameStoreTests/Pods-GameStoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F080737957F153B39250B8C /* Pods-GameStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameStore.debug.xcconfig"; path = "Target Support Files/Pods-GameStore/Pods-GameStore.debug.xcconfig"; sourceTree = "<group>"; };
+		6035F9B8259398B4000549BC /* WinkelwagenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinkelwagenViewController.swift; sourceTree = "<group>"; };
+		6035F9BE25939AC9000549BC /* WinkelwagenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinkelwagenService.swift; sourceTree = "<group>"; };
+		6035F9C32593A0E5000549BC /* WinkelwagenDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinkelwagenDetailViewController.swift; sourceTree = "<group>"; };
 		60450E732574033C00FEF5E9 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		6080D134256FF851003BAFBE /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		6080D139256FFB24003BAFBE /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
+		60955BC92593A7FF007C4B15 /* WinkelwagenTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinkelwagenTableView.swift; sourceTree = "<group>"; };
 		60A6E245256AEA87003303D2 /* GameStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A6E248256AEA87003303D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60A6E24A256AEA87003303D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +138,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		6035F9BD25939AA7000549BC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6035F9BE25939AC9000549BC /* WinkelwagenService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		60A6E23C256AEA87003303D2 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +171,7 @@
 		60A6E247256AEA87003303D2 /* GameStore */ = {
 			isa = PBXGroup;
 			children = (
+				6035F9BD25939AA7000549BC /* Services */,
 				60C7301F256FD90400C8DE25 /* View */,
 				60E196AD256FB6970051F73C /* ViewController */,
 				60A6E28C256AECC7003303D2 /* Models */,
@@ -212,6 +229,7 @@
 			children = (
 				60C7302B256FE28600C8DE25 /* GameTableView.swift */,
 				6080D139256FFB24003BAFBE /* GameDetailView.swift */,
+				60955BC92593A7FF007C4B15 /* WinkelwagenTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,6 +243,8 @@
 				60E196C8256FD2D10051F73C /* GameLijstViewController.swift */,
 				6080D134256FF851003BAFBE /* GameDetailViewController.swift */,
 				60450E732574033C00FEF5E9 /* AccountViewController.swift */,
+				6035F9B8259398B4000549BC /* WinkelwagenViewController.swift */,
+				6035F9C32593A0E5000549BC /* WinkelwagenDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -483,13 +503,17 @@
 				60A6E285256AEC29003303D2 /* APIManager.swift in Sources */,
 				60A6E29B256AFB0A003303D2 /* RequestInterceptor.swift in Sources */,
 				60A6E28E256AECDB003303D2 /* Game.swift in Sources */,
+				6035F9BF25939AC9000549BC /* WinkelwagenService.swift in Sources */,
 				60CCB422256DB02800C9D27A /* Router.swift in Sources */,
 				60A6E24D256AEA87003303D2 /* ViewController.swift in Sources */,
 				6080D13A256FFB24003BAFBE /* GameDetailView.swift in Sources */,
 				60A6E249256AEA87003303D2 /* AppDelegate.swift in Sources */,
+				6035F9C42593A0E5000549BC /* WinkelwagenDetailViewController.swift in Sources */,
 				60CCB42A256DB60300C9D27A /* NetworkLogger.swift in Sources */,
 				60A6E24B256AEA87003303D2 /* SceneDelegate.swift in Sources */,
+				6035F9B9259398B4000549BC /* WinkelwagenViewController.swift in Sources */,
 				60E196C9256FD2D10051F73C /* GameLijstViewController.swift in Sources */,
+				60955BCA2593A7FF007C4B15 /* WinkelwagenTableView.swift in Sources */,
 				60E196BC256FBBBD0051F73C /* RegistreerViewController.swift in Sources */,
 				60C7302C256FE28600C8DE25 /* GameTableView.swift in Sources */,
 				60E196AF256FB6B50051F73C /* LogInViewController.swift in Sources */,
