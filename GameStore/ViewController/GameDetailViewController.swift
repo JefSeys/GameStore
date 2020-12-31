@@ -11,11 +11,21 @@ import UIKit
 class GameDetailViewController: UIViewController{
     var selectedGame: Game!
     var winkelwagenService = WinkelwagenService.sharedInstance
+
     
     @IBOutlet weak var naam: UILabel!
     @IBOutlet weak var prijs: UILabel!
     @IBOutlet weak var imgView: UIImageView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        naam.center.x -= view.bounds.width
+        prijs.center.x -= view.bounds.width
+        imgView.center.x -= view.bounds.width
+        
+        UIView.animate(withDuration: 0.5) { [weak self] in
+          self?.view.layoutIfNeeded()
+        }
+    }
     override func viewDidLoad() {
       super.viewDidLoad()
         naam.text = selectedGame.name

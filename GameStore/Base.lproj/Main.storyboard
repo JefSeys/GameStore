@@ -142,7 +142,7 @@
                             <constraint firstItem="89Y-0e-gCT" firstAttribute="centerY" secondItem="oyo-bC-6UC" secondAttribute="centerY" id="UUZ-kg-ca5"/>
                             <constraint firstItem="89Y-0e-gCT" firstAttribute="top" secondItem="qUH-gf-gdQ" secondAttribute="bottom" constant="50" id="jUf-rp-vYi"/>
                             <constraint firstItem="SOi-pI-nTT" firstAttribute="centerY" secondItem="oyo-bC-6UC" secondAttribute="centerY" constant="300" id="pra-6k-Ur1"/>
-                            <constraint firstItem="qUH-gf-gdQ" firstAttribute="centerX" secondItem="oyo-bC-6UC" secondAttribute="centerX" id="vGj-6e-gwb"/>
+                            <constraint firstItem="qUH-gf-gdQ" firstAttribute="centerX" secondItem="oyo-bC-6UC" secondAttribute="centerX" identifier="imgVerticalCenter" id="vGj-6e-gwb"/>
                             <constraint firstItem="89Y-0e-gCT" firstAttribute="centerX" secondItem="oyo-bC-6UC" secondAttribute="centerX" id="zZA-6O-LIL"/>
                         </constraints>
                         <variation key="default">

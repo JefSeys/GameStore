@@ -31,7 +31,7 @@ enum Router {
     case registreer(String, String, String, String, String)
 
   var baseURL: String {
-      return "http://192.168.1.31:45455/api/"
+      return "http://192.168.0.143:45455/api/"
   }
 
   var path: String {
