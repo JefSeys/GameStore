@@ -42,37 +42,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="separatorColor" systemColor="secondaryLabelColor"/>
                         <color key="sectionIndexBackgroundColor" systemColor="secondaryLabelColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="AAV-VF-o3E" customClass="GameTableView" customModule="GameStore" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="84.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AAV-VF-o3E" id="Uhm-3A-82S">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="84.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Naam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uba-Kn-5yk">
-                                            <rect key="frame" x="20" y="11" width="249" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uba-Kn-5yk">
+                                            <rect key="frame" x="30" y="16" width="200" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="Aix-UP-Noc"/>
+                                                <constraint firstAttribute="height" constant="21" id="rJg-tO-bAq"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Prijs" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh0-6t-2LT">
-                                            <rect key="frame" x="277" y="12" width="97" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prijs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh0-6t-2LT">
+                                            <rect key="frame" x="30" y="42" width="200" height="21.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="tgW-tQ-MVi"/>
+                                                <constraint firstAttribute="width" constant="200" id="z1l-lP-dDD"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="upK-Bp-hgg">
+                                            <rect key="frame" x="250" y="5" width="105" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="70" id="50I-97-f3a"/>
+                                                <constraint firstAttribute="width" constant="105" id="9wf-43-3Rh"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="dh0-6t-2LT" firstAttribute="centerY" secondItem="Uhm-3A-82S" secondAttribute="centerY" id="6pY-7Y-pBG"/>
-                                        <constraint firstItem="dh0-6t-2LT" firstAttribute="centerX" secondItem="Uhm-3A-82S" secondAttribute="centerX" constant="150" id="EFH-Ze-vNd"/>
+                                        <constraint firstItem="uba-Kn-5yk" firstAttribute="leading" secondItem="Uhm-3A-82S" secondAttribute="leadingMargin" constant="10" id="ADx-Fi-eXN"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="upK-Bp-hgg" secondAttribute="trailing" constant="20" id="Xio-Rj-fRI"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="dh0-6t-2LT" secondAttribute="bottom" constant="10" id="Z1X-sY-YnX"/>
+                                        <constraint firstItem="dh0-6t-2LT" firstAttribute="top" secondItem="uba-Kn-5yk" secondAttribute="bottom" constant="5" id="cga-Vl-aUf"/>
+                                        <constraint firstItem="dh0-6t-2LT" firstAttribute="leading" secondItem="Uhm-3A-82S" secondAttribute="leadingMargin" constant="10" id="ldk-qv-7Ev"/>
+                                        <constraint firstItem="upK-Bp-hgg" firstAttribute="top" secondItem="Uhm-3A-82S" secondAttribute="top" constant="5" id="n1z-o5-u1H"/>
+                                        <constraint firstItem="uba-Kn-5yk" firstAttribute="top" secondItem="Uhm-3A-82S" secondAttribute="topMargin" constant="5" id="qON-Uo-305"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <connections>
+                                    <outlet property="img" destination="upK-Bp-hgg" id="aaq-Dr-g0F"/>
                                     <outlet property="naam" destination="uba-Kn-5yk" id="5K5-2i-yzP"/>
                                     <outlet property="prijs" destination="dh0-6t-2LT" id="OLV-zf-RXu"/>
                                     <segue destination="ndG-4N-amC" kind="show" id="lh4-yM-J5R"/>
@@ -91,7 +112,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8V-TH-jHt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645" y="86"/>
+            <point key="canvasLocation" x="1644.9275362318842" y="85.714285714285708"/>
         </scene>
         <!--Game Detail View Controller-->
         <scene sceneID="gZI-9S-kGj">

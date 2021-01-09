@@ -9,21 +9,24 @@ import Foundation
 import UIKit
 
 class GameLijstViewController: UIViewController {
+    // view attributen
+    @IBOutlet var gameTable: UITableView!
     
+    // code attributen
+    private let apiManager = APIManager.shared
     var games: [Game] = []
     var filteredGames: [Game] = []
     let searchController = UISearchController(searchResultsController: nil)
-    @IBOutlet var gameTable: UITableView!
     
     
     override func viewDidLoad() {
       super.viewDidLoad()
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Candies"
+        searchController.searchBar.placeholder = "Search Game"
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        APIManager.getGames{ [self] gamesLijst in
+        apiManager.getGames{ [self] gamesLijst in
           self.games = gamesLijst
             gameTable.reloadData()
         }
@@ -76,7 +79,9 @@ extension GameLijstViewController: UITableViewDataSource {
         }
     
         cell.naam.text = game.name
-        cell.prijs.text = String(game.price)
+        cell.prijs.text = "Prijs: " + String(game.price) + "euro"
+        let data = Data(base64Encoded: game.base64Img.replacingOccurrences(of: "data:image/jpeg;base64,", with: ""), options: .ignoreUnknownCharacters)
+        cell.img.image = UIImage(data: data!)
     
     return cell
   }

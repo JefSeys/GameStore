@@ -8,7 +8,9 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
+    // code attributen
+    private let apiManager = APIManager.shared
     var window: UIWindow?
 
     func changRootViewController(_ vc: UIViewController, animated: Bool = true){
@@ -27,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if APIManager.isIngelogd == false {
+        if apiManager.isIngelogd == false {
             let loginController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
             window?.rootViewController = loginController
         }else{

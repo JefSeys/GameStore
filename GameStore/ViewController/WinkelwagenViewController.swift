@@ -9,11 +9,13 @@ import Foundation
 import UIKit
 
 class WinkelwagenViewController: UIViewController {
-    
-    var games: [Game] = []
-    var winkelwagenService = WinkelwagenService.sharedInstance
-    
+    // view attributen
     @IBOutlet var gameTable: UITableView!
+    
+    // code attributen
+    private var games: [Game] = []
+    private var winkelwagenService = WinkelwagenService.sharedInstance
+    
     override func viewDidLoad() {
       super.viewDidLoad()
         self.games = winkelwagenService.games

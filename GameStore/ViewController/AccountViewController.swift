@@ -9,20 +9,24 @@ import Foundation
 import UIKit
 
 class AccountViewController: UIViewController {
+    // view attributen
     @IBOutlet weak var email: UILabel!
     
+    // code attributen
+    private let apiManager = APIManager.shared
     
     override func viewDidLoad() {
       super.viewDidLoad()
-        email.text = APIManager.gebruikerEmail
+        email.text = apiManager.gebruikerEmail
     }
     
     
     @IBAction func loguit(_ sender: Any) {
-        APIManager.loguit()
+        apiManager.loguit()
         navigateLogin()
     }
     
+    // verandert rootViewController naar login met animatie (via SceneDelegate.swift)
     func navigateLogin(){
         
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)

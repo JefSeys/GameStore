@@ -14,11 +14,11 @@ import SwiftKeychainWrapper
 class APIManager {
     var webAuthenticationSession: ASWebAuthenticationSession?
     static let shared = APIManager()
-    static var token = ""
-    static var gebruikerEmail = ""
-    static var isIngelogd = false
+    var token = ""
+    var gebruikerEmail = ""
+    var isIngelogd = false
 
-    static let sessionManager: Session = {
+    let sessionManager: Session = {
       let configuration = URLSessionConfiguration.af.default
       configuration.requestCachePolicy = .returnCacheDataElseLoad
       let responseCacher = ResponseCacher(behavior: .modify { _, response in
@@ -40,11 +40,11 @@ class APIManager {
         eventMonitors: [networkLogger])
     }()
     final var API = ""
-    static let header: HTTPHeaders = [
+    let header: HTTPHeaders = [
         "Accept": "application/json"
       ]
     
-    static func getGames(completion: @escaping ([Game]) -> Void) {
+    func getGames(completion: @escaping ([Game]) -> Void) {
         sessionManager.request(Router.getGames)
       .responseDecodable(of: [Game].self) { response in
         let games = response.value
@@ -52,27 +52,27 @@ class APIManager {
       }
   }
     
-    static func loguit(){
+    func loguit(){
         token = ""
         isIngelogd = false
         gebruikerEmail = ""
     }
     
-        static func loginUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
+        func loginUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
             sessionManager.request(Router.login(email, password)).responseString { response in
                 let error = response.response?.statusCode
                 if error == 201 {
-                    token = String(data: response.data!, encoding: .utf8)!
-                    isIngelogd = true
-                    gebruikerEmail = email
+                    self.token = String(data: response.data!, encoding: .utf8)!
+                    self.isIngelogd = true
+                    self.gebruikerEmail = email
                     completion(true)
                 } else {
-                    isIngelogd = false
+                    self.isIngelogd = false
                     completion(false)
                 }
             }
         }
-    static func registreer(email: String, password: String, voornaam: String, achternaam: String, herhaalwachtwoord: String, completion: @escaping (Bool) -> Void) {
+    func registreer(email: String, password: String, voornaam: String, achternaam: String, herhaalwachtwoord: String, completion: @escaping (Bool) -> Void) {
         sessionManager.request(Router.registreer(email, password, voornaam, achternaam, herhaalwachtwoord)).responseString { response in
             let error = response.response?.statusCode
             if error == 201 {

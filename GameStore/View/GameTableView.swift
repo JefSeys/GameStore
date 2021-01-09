@@ -11,4 +11,5 @@ import UIKit
 class GameTableView: UITableViewCell{
     @IBOutlet weak var naam: UILabel!
     @IBOutlet weak var prijs: UILabel!
+    @IBOutlet weak var img: UIImageView!
 }

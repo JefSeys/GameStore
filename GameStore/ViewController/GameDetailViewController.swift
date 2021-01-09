@@ -9,14 +9,21 @@ import Foundation
 import UIKit
 
 class GameDetailViewController: UIViewController{
-    var selectedGame: Game!
-    var winkelwagenService = WinkelwagenService.sharedInstance
-
-    
+    // view attributen
     @IBOutlet weak var naam: UILabel!
     @IBOutlet weak var prijs: UILabel!
     @IBOutlet weak var imgView: UIImageView!
     
+    // code attributen
+    private var _selectedGame: Game!
+    var selectedGame: Game {
+        set { _selectedGame = newValue }
+        get { return _selectedGame }
+    }
+    private var winkelwagenService = WinkelwagenService.sharedInstance
+
+    
+    // animatie
     override func viewWillAppear(_ animated: Bool) {
         naam.center.x -= view.bounds.width
         prijs.center.x -= view.bounds.width
@@ -26,6 +33,7 @@ class GameDetailViewController: UIViewController{
           self?.view.layoutIfNeeded()
         }
     }
+    
     override func viewDidLoad() {
       super.viewDidLoad()
         naam.text = selectedGame.name

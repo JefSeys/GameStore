@@ -9,11 +9,14 @@ import Foundation
 import UIKit
 
 class LoginViewController: UIViewController {
+    // view attributen
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var wachtwoord: UITextField!
     @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var loadIcon: UIActivityIndicatorView!
     
+    // code attributen
+    private let apiManager = APIManager.shared
     private var _isIngelogd: Bool = false
     var isIngelogd: Bool {
         set { _isIngelogd = newValue }
@@ -23,22 +26,21 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
         
-            
+            // tap op scherm sluit keyboard
             let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-           //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-           //tap.cancelsTouchesInView = false
            view.addGestureRecognizer(tap)
     }
     
+    // keyboard sluit als scherm niet meer zichtbaar is
     @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
     
+    // loginknop functie
     @IBAction func login(_ sender: Any) {
         errorMessage.isHidden = true
         loadIcon.startAnimating()
-        APIManager.loginUser(email: email.text!, password: wachtwoord.text!){ [self] ingelogd in
+        apiManager.loginUser(email: email.text!, password: wachtwoord.text!){ [self] ingelogd in
             if(ingelogd == true){
                 loadIcon.stopAnimating()
                 navigateMain()
@@ -50,6 +52,7 @@ class LoginViewController: UIViewController {
           }
     }
     
+    // verandert rootviewcontroller naar tabbar met animatie (via SeneDelegate.swift)
     private func navigateMain(){
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             

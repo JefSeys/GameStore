@@ -9,32 +9,32 @@ import Foundation
 import UIKit
 
 class RegistreerViewController: UIViewController {
+    // view attributen
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var voornaam: UITextField!
     @IBOutlet weak var achternaam: UITextField!
     @IBOutlet weak var wachtwoord: UITextField!
     @IBOutlet weak var herhaalwachtwoord: UITextField!
-    
     @IBOutlet weak var laadicon: UIActivityIndicatorView!
     @IBOutlet weak var errormessage: UILabel!
+    
+    // code attributen
+    private let apiManager = APIManager.shared
     
     override func viewDidLoad() {
       super.viewDidLoad()
         
-        
+        // sluit toetsenbord
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-
-       //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-       //tap.cancelsTouchesInView = false
-
        view.addGestureRecognizer(tap)
     }
     
+    // sluit toetsenbord
     @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
     
+    // registreerknop functie
     @IBAction func registreer(_ sender: Any) {
         errormessage.isHidden = true
         laadicon.startAnimating()
@@ -64,7 +64,7 @@ class RegistreerViewController: UIViewController {
             errormessage.text = "Wachtwoorden komen niet overeen"
             errormessage.isHidden = false
         }else{
-            APIManager.registreer(email: email.text!, password: wachtwoord.text!, voornaam: voornaam.text!, achternaam: achternaam.text!, herhaalwachtwoord: herhaalwachtwoord.text!){ [self] geregistreerd in
+            apiManager.registreer(email: email.text!, password: wachtwoord.text!, voornaam: voornaam.text!, achternaam: achternaam.text!, herhaalwachtwoord: herhaalwachtwoord.text!){ [self] geregistreerd in
                 if(geregistreerd == true){
                     laadicon.stopAnimating()
                     //navigateLogin()
