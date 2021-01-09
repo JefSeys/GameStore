@@ -37,7 +37,7 @@ class GameDetailViewController: UIViewController{
     override func viewDidLoad() {
       super.viewDidLoad()
         naam.text = selectedGame.name
-        prijs.text = String(selectedGame.price)
+        prijs.text = "Prijs: " + String(selectedGame.price) + " euro"
         
         let data = Data(base64Encoded: selectedGame.base64Img.replacingOccurrences(of: "data:image/jpeg;base64,", with: ""), options: .ignoreUnknownCharacters)
         imgView.image = UIImage(data: data!)

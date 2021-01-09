@@ -12,7 +12,6 @@ import AuthenticationServices
 import SwiftKeychainWrapper
 
 class APIManager {
-    var webAuthenticationSession: ASWebAuthenticationSession?
     static let shared = APIManager()
     var token = ""
     var gebruikerEmail = ""
@@ -63,6 +62,7 @@ class APIManager {
                 let error = response.response?.statusCode
                 if error == 201 {
                     self.token = String(data: response.data!, encoding: .utf8)!
+                    KeychainWrapper.standard.set("token", forKey: self.token)
                     self.isIngelogd = true
                     self.gebruikerEmail = email
                     completion(true)

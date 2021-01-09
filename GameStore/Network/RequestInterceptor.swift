@@ -8,7 +8,6 @@ import Alamofire
 import SwiftKeychainWrapper
 
 class RequestInterceptor: Alamofire.RequestInterceptor {
-    
     init(){}
   //1
   let retryLimit = 5

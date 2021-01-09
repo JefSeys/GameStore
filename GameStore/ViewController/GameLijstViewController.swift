@@ -79,7 +79,7 @@ extension GameLijstViewController: UITableViewDataSource {
         }
     
         cell.naam.text = game.name
-        cell.prijs.text = "Prijs: " + String(game.price) + "euro"
+        cell.prijs.text = "Prijs: " + String(game.price) + " euro"
         let data = Data(base64Encoded: game.base64Img.replacingOccurrences(of: "data:image/jpeg;base64,", with: ""), options: .ignoreUnknownCharacters)
         cell.img.image = UIImage(data: data!)
     

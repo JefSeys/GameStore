@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
+// print json objecten uit, ook errors van backend
 class NetworkLogger: EventMonitor {
     init(){}
   let queue = DispatchQueue(label: "com.jefseys.gamestore.networklogger")
@@ -21,6 +22,8 @@ class NetworkLogger: EventMonitor {
     guard let data = response.data else {
       return
     }
+    
+    // print json
     if let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) {
       print(json)
     }
