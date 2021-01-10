@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class RegistreerViewController: UIViewController {
+class RegistreerViewController: UIViewController, UITextFieldDelegate {
     // view attributen
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var voornaam: UITextField!
@@ -23,7 +23,11 @@ class RegistreerViewController: UIViewController {
     
     override func viewDidLoad() {
       super.viewDidLoad()
-        
+        email.delegate = self
+        voornaam.delegate = self
+        achternaam.delegate = self
+        wachtwoord.delegate = self
+        herhaalwachtwoord.delegate = self
         // sluit toetsenbord
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
        view.addGestureRecognizer(tap)
@@ -32,6 +36,12 @@ class RegistreerViewController: UIViewController {
     // sluit toetsenbord
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    // sluit toetsenbord op returnkey
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
     }
     
     // registreerknop functie

@@ -13,7 +13,7 @@ import SwiftKeychainWrapper
 
 class APIManager {
     static let shared = APIManager()
-    var token = ""
+    private var token = ""
     var gebruikerEmail = ""
     var isIngelogd = false
 
@@ -38,10 +38,6 @@ class APIManager {
         cachedResponseHandler: responseCacher,
         eventMonitors: [networkLogger])
     }()
-    final var API = ""
-    let header: HTTPHeaders = [
-        "Accept": "application/json"
-      ]
     
     func getGames(completion: @escaping ([Game]) -> Void) {
         sessionManager.request(Router.getGames)

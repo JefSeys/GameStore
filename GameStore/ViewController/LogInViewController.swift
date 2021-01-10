@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     // view attributen
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var wachtwoord: UITextField!
@@ -25,7 +25,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
       super.viewDidLoad()
-        
+        email.delegate = self
+        wachtwoord.delegate = self
             // tap op scherm sluit toetsenbord
             let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
            view.addGestureRecognizer(tap)
@@ -34,6 +35,12 @@ class LoginViewController: UIViewController {
     // sluit toetsenbord
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    // sluit toetsenbord op returnkey
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
     }
     
     // loginknop functie
