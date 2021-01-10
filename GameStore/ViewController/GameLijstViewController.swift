@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class GameLijstViewController: UIViewController {
+class GameLijstViewController: UIViewController, UISearchControllerDelegate, UISearchBarDelegate {
     // view attributen
     @IBOutlet var gameTable: UITableView!
     
@@ -16,16 +16,27 @@ class GameLijstViewController: UIViewController {
     private let apiManager = APIManager.shared
     var games: [Game] = []
     var filteredGames: [Game] = []
-    let searchController = UISearchController(searchResultsController: nil)
+    var searchController = UISearchController(searchResultsController: nil)
     
     
     override func viewDidLoad() {
       super.viewDidLoad()
+        // zoekbalk instellen
+        /*
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Game"
-        navigationItem.searchController = searchController
+        navigationItem.titleView = searchController.searchBar
+        definesPresentationContext = true*/
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Game"
+        navigationItem.titleView = searchController.searchBar
         definesPresentationContext = true
+        
         apiManager.getGames{ [self] gamesLijst in
           self.games = gamesLijst
             gameTable.reloadData()

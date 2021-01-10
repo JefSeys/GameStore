@@ -11,5 +11,4 @@ import UIKit
 class GameDetailView: UIViewController {
     @IBOutlet weak var naam: UILabel!
     @IBOutlet weak var prijs: UILabel!
-    
 }

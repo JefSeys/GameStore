@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class WinkelwagenTableView: UITableViewCell{
-    
     @IBOutlet weak var naam: UILabel!
     @IBOutlet weak var prijs: UILabel!
 }

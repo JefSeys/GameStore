@@ -67,8 +67,8 @@ class RegistreerViewController: UIViewController {
             apiManager.registreer(email: email.text!, password: wachtwoord.text!, voornaam: voornaam.text!, achternaam: achternaam.text!, herhaalwachtwoord: herhaalwachtwoord.text!){ [self] geregistreerd in
                 if(geregistreerd == true){
                     laadicon.stopAnimating()
-                    //navigateLogin()
                     errormessage.text = "Registratie voltooid!"
+                    navigateLogin()
                     errormessage.isHidden = false
                 }else{
                     laadicon.stopAnimating()

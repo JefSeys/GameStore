@@ -26,12 +26,12 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
         
-            // tap op scherm sluit keyboard
+            // tap op scherm sluit toetsenbord
             let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
            view.addGestureRecognizer(tap)
     }
     
-    // keyboard sluit als scherm niet meer zichtbaar is
+    // sluit toetsenbord
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -56,10 +56,10 @@ class LoginViewController: UIViewController {
     private func navigateMain(){
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             
-        guard let mainNavigationVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController else{
+        guard let tabBar = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController else{
             return
         }
         
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changRootViewController(mainNavigationVC)
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changRootViewController(tabBar)
     }
 }
