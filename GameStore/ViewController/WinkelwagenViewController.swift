@@ -22,26 +22,31 @@ class WinkelwagenViewController: UIViewController {
         gameTable.reloadData()
     }
     
+    // geselecteerde game details instellen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detailViewController = segue.destination as! WinkelwagenDetailViewController
         detailViewController.selectedGame = games[gameTable.indexPathForSelectedRow!.row]
     }
     
+    // reload games
     override func viewDidAppear(_ animated: Bool) {
         self.games = winkelwagenService.games
         gameTable.reloadData()
     }
     
+    // reload na verwijderen game
     func reload(){
         self.games = winkelwagenService.games
         gameTable.reloadData()
     }
 }
 extension WinkelwagenViewController: UITableViewDataSource {
+    // aantal rijen
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return games.count
   }
  
+    // cell info instellen
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! WinkelwagenTableView
     let game = games[indexPath.row]

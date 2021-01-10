@@ -43,6 +43,7 @@ class GameDetailViewController: UIViewController{
         imgView.image = UIImage(data: data!)
     }
     
+    // toevoegen aan winkelwagen functie
     @IBAction func voegToeAanWinkelwagen(_ sender: Any) {
         let alert = UIAlertController(title: selectedGame.name + " toevoegen?", message: "Weet u het zeker?", preferredStyle: .alert)
         

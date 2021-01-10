@@ -20,7 +20,7 @@ class AccountViewController: UIViewController {
         email.text = apiManager.gebruikerEmail
     }
     
-    
+    // log uit functie
     @IBAction func loguit(_ sender: Any) {
         apiManager.loguit()
         navigateLogin()
@@ -31,10 +31,10 @@ class AccountViewController: UIViewController {
         
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 
-            guard let mainNavigationVC = storyboard.instantiateViewController(withIdentifier: "LoginNavigationController") as? UINavigationController else{
+            guard let login = storyboard.instantiateViewController(withIdentifier: "LoginNavigationController") as? UINavigationController else{
                 return
             }
             
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changRootViewController(mainNavigationVC)
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changRootViewController(login)
     }
 }

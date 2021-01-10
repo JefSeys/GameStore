@@ -22,12 +22,6 @@ class GameLijstViewController: UIViewController, UISearchControllerDelegate, UIS
     override func viewDidLoad() {
       super.viewDidLoad()
         // zoekbalk instellen
-        /*
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Game"
-        navigationItem.titleView = searchController.searchBar
-        definesPresentationContext = true*/
         searchController.delegate = self
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
@@ -43,6 +37,7 @@ class GameLijstViewController: UIViewController, UISearchControllerDelegate, UIS
         }
     }
     
+    // gekozen game details instellen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detailViewController = segue.destination as! GameDetailViewController
         let indexPath = gameTable.indexPathForSelectedRow
@@ -55,15 +50,18 @@ class GameLijstViewController: UIViewController, UISearchControllerDelegate, UIS
         detailViewController.selectedGame = game
     }
     
+    // boolean die aangeeft of zoekbalk leeg is of niet
     var isSearchBarEmpty: Bool {
       return searchController.searchBar.text?.isEmpty ?? true
     }
     
+    // boolean die aangeeft of zoekbalk moet filteren of niet => niet toont de volledige gamelijst anders filter
     var isFiltering: Bool {
       let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
       return searchController.isActive && (!isSearchBarEmpty || searchBarScopeIsFiltering)
     }
     
+    // filter op naam
     func filterContentForSearchText(_ searchText: String) {
       filteredGames = games.filter { (game: Game) -> Bool in
         return game.name.lowercased().contains(searchText.lowercased())
@@ -73,6 +71,7 @@ class GameLijstViewController: UIViewController, UISearchControllerDelegate, UIS
 }
 
 extension GameLijstViewController: UITableViewDataSource {
+    // aantal rijen
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
           return filteredGames.count
@@ -80,6 +79,7 @@ extension GameLijstViewController: UITableViewDataSource {
     return games.count
   }
  
+    // cell info instellen
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! GameTableView
         let game: Game
@@ -99,6 +99,7 @@ extension GameLijstViewController: UITableViewDataSource {
 }
 
 extension GameLijstViewController: UISearchResultsUpdating {
+    // filter games
   func updateSearchResults(for searchController: UISearchController) {
     let searchBar = searchController.searchBar
     filterContentForSearchText(searchBar.text!)
