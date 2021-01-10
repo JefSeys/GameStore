@@ -13,8 +13,12 @@
 - Email: jef.seys@gmail.be
 - Password: P@ssword1111
 
+## Dependencies
 
-## Meta
+- Cocoapods
+- Alamofire
+
+## Info
 
 Jef Seys – [@JefSeys](https://github.com/JefSeys) – jef.seys@gmail.com
 
