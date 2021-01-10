@@ -8,6 +8,10 @@
 - [x] Gamelijst + details
 - [x] Winkelwagen
 
+## Backend
+
+https://github.com/Web-IV/1920-a2-be-JefSeys
+
 ## Accounts
 
 - Email: jef.seys@gmail.be
